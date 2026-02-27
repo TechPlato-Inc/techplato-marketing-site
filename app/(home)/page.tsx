@@ -4,6 +4,7 @@ import HeroSection from '@/components/Home/HeroSection'
 
 import Navbar from '@/components/Shared/Navbar'
 import CursorGlow from '@/components/Shared/CursorGlow'
+import Parallax from '@/components/Shared/Parallax'
 
 // Lazy-load below-the-fold sections
 const AboutSection = dynamic(() => import('@/components/Home/AboutSection'))
@@ -19,8 +20,12 @@ function Page() {
       <div className="global-grain" aria-hidden="true" />
       {/* Cinematic lighting layer */}
       <div className="cinematic-lighting" aria-hidden="true">
-        <div className="cinematic-glow-1" />
-        <div className="cinematic-glow-2" />
+        <Parallax speed={0.15}>
+          <div className="cinematic-glow-1" />
+        </Parallax>
+        <Parallax speed={-0.1}>
+          <div className="cinematic-glow-2" />
+        </Parallax>
       </div>
       {/* Vignette edge darkening */}
       <div className="cinematic-vignette" aria-hidden="true" />

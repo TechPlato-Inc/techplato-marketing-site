@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono,Poppins, Roboto_Slab} from "next/font/google";
 import "./globals.css";
-import Aos from "@/components/Shared/Aos";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,7 +41,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${robotoSlab
           .variable} ${poppins.className} antialiased`}
       >
-        <Aos/>
         {children}
       </body>
     </html>

@@ -6,11 +6,13 @@ import { useState, useEffect } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { RxCross2 } from "react-icons/rx";
+import { motion, useReducedMotion } from "framer-motion";
 
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const reducedMotion = useReducedMotion();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,7 +23,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav
+    <motion.nav
+      initial={reducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={`w-full px-4 pb-5 pt-6 max-w-screen-xl mx-auto text-gray-200 font-poppins z-50 sticky top-0 rounded-md backdrop-blur-md transition-colors duration-300 ${
         scrolled ? "bg-black/70" : "bg-black/30"
       }`}
@@ -35,6 +40,7 @@ const Navbar = () => {
             alt="Tech Plato Logo"
             height={100}
             width={150}
+            className="logo-glow"
           />
         </a>
 
@@ -167,7 +173,7 @@ const Navbar = () => {
           </details>
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 };
 
