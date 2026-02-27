@@ -6,7 +6,11 @@
       "Bash(lsof -ti:3000)",
       "Bash(git init)",
       "Bash(git remote add origin https://github.com/almahfuz2019/techplato-new-site.git)",
-      "Bash(git add -A)"
+      "Bash(git add -A)",
+      "Bash(git commit:*)",
+      "Bash(git push -u origin main)",
+      "Bash(gh auth login)",
+      "Bash(git remote set-url origin https://github.com/TechPlato-Inc/techplato-marketing-site.git)"
     ]
   }
 }
